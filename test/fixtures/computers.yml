@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  path: MyString
+  os: MyString
+  os_version: MyString
+  ip_address: MyString
+  description: MyText
+
+two:
+  name: MyString
+  path: MyString
+  os: MyString
+  os_version: MyString
+  ip_address: MyString
+  description: MyText

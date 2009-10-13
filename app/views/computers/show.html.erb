@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @computer.name %>
+</p>
+
+<p>
+  <b>Path:</b>
+  <%=h @computer.path %>
+</p>
+
+<p>
+  <b>Os:</b>
+  <%=h @computer.os %>
+</p>
+
+<p>
+  <b>Os version:</b>
+  <%=h @computer.os_version %>
+</p>
+
+<p>
+  <b>Ip address:</b>
+  <%=h @computer.ip_address %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @computer.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>

@@ -1,0 +1,35 @@
+<h1>New computer</h1>
+
+<% form_for(@computer) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :path %><br />
+    <%= f.text_field :path %>
+  </p>
+  <p>
+    <%= f.label :os %><br />
+    <%= f.text_field :os %>
+  </p>
+  <p>
+    <%= f.label :os_version %><br />
+    <%= f.text_field :os_version %>
+  </p>
+  <p>
+    <%= f.label :ip_address %><br />
+    <%= f.text_field :ip_address %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', computers_path %>

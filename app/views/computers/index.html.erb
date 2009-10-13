@@ -1,0 +1,30 @@
+<h1>Listing computers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Path</th>
+    <th>Os</th>
+    <th>Os version</th>
+    <th>Ip address</th>
+    <th>Description</th>
+  </tr>
+
+<% @computers.each do |computer| %>
+  <tr>
+    <td><%=h computer.name %></td>
+    <td><%=h computer.path %></td>
+    <td><%=h computer.os %></td>
+    <td><%=h computer.os_version %></td>
+    <td><%=h computer.ip_address %></td>
+    <td><%=h computer.description %></td>
+    <td><%= link_to 'Show', computer %></td>
+    <td><%= link_to 'Edit', edit_computer_path(computer) %></td>
+    <td><%= link_to 'Destroy', computer, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New computer', new_computer_path %>

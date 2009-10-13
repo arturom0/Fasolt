@@ -1,0 +1,30 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>User login</th>
+    <th>Email addresses</th>
+    <th>Cost center</th>
+    <th>Path</th>
+    <th>Description</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.name %></td>
+    <td><%=h user.user_login %></td>
+    <td><%=h user.email_addresses %></td>
+    <td><%=h user.cost_center %></td>
+    <td><%=h user.path %></td>
+    <td><%=h user.description %></td>
+    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Edit', edit_user_path(user.sAMAccountName) %></td>
+    <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user', new_user_path %>
