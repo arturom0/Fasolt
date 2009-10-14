@@ -10,10 +10,13 @@ class Computer < ActiveLdap::Base
     self.cn
   end
   def os
-    self.operatingSystem
+    self.operatingSystem + " " + self.operatingSystemVersion
   end
-  def os_version
-    self.operatingSystemVersion
+  def domain
+    s = self.dNSHostName
+    a = s.split('.')
+    a.shift
+    return a.join('.')
   end
   def ip_address
     self.networkAddress
@@ -22,8 +25,8 @@ class Computer < ActiveLdap::Base
   def to_json(options = {})
     { :path   => self.path,
       :name   => self.name,
+      :domain => self.domain,
       :os     => self.os,
-      :os_version => self.os_version,
       :ip_address => self.networkAddress,
       :descripttion => self.description}.to_json(options)
     
